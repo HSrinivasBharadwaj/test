@@ -59,7 +59,7 @@ const Body = () => {
         value={searchMovie}
         onChange={handleMovieChange}
       />
-      <div className="mt-5 mx-0 flex justify-center">
+      <div className="flex-col mt-5 mx-0 md:flex-row lg:flex-row xl:flex-row flex justify-center">
         <label htmlFor="startDate">Start Date:</label>
         <input
           type="date"
@@ -83,11 +83,11 @@ const Body = () => {
           Submit
         </button>
       </div>
-      <div className="mx-32 my-10">
-        <div className="flex justify-between flex-wrap mb-4">
+      <div className=" md:mx-32 lg:mx-32 xl:mx-32 my-10">
+        <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between md:flex-wrap lg:flex-wrap xl:flex-wrap mb-4">
           {filteredMovie.map((movie) => {
             return (
-              <div key={movie.id} className="w-1/3">
+              <div key={movie.id} className="w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
                 <MovieList movie={movie} />
               </div>
             );
