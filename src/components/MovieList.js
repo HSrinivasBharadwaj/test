@@ -40,7 +40,7 @@ const MovieList = ({ movie }) => {
           alt={movie.title}
           className="rounded-t-lg"
         />
-        <div className="p-4">
+        <div className="p-2 md:p-4 lg:p-4 xl:p-4">
           <h1 className="text-xl font-semibold">{movie.title}</h1>
           <p className="text-sm text-gray-600">{movie.genres.join(", ")}</p>
           <p className="text-sm text-gray-600">{movie.release_date}</p>
