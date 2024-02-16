@@ -32,7 +32,7 @@ const MovieList = ({ movie }) => {
   return (
     <div>
       <div
-        className="shadow-lg rounded-lg p-5 my-5 mx-5 h-auto cursor-pointer transition duration-300 ease-in-out transform hover:translate-y-2"
+        className="bg-white shadow-lg rounded-lg p-5 my-5 mx-5 h-auto cursor-pointer transition duration-300 ease-in-out transform hover:translate-y-2"
         onClick={() => openModal(movie._id)}
       >
         <img
