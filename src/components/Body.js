@@ -49,22 +49,29 @@ const Body = () => {
 
     setFilteredMovie(filteredMovies);
   };
+  
 
   return (
-    <div>
+    <div className="bg-[#171941]">
+      <label
+        htmlFor="label"
+        className="text-center mx-auto flex items-center justify-center text-white font-bold text-2xl"
+      >
+        Search for the movie
+      </label>
       <input
         type="text"
         placeholder="Enter the name of the movie"
-        className="border border-gray-500 p-1 w-96 rounded-md mt-5 mx-auto flex items-center"
+        className="border border-gray-500 p-1 w-96 rounded-md mt-3 mx-auto flex items-center"
         value={searchMovie}
         onChange={handleMovieChange}
       />
       <div className="flex-col m-5  md:flex-row lg:flex-row xl:flex-row flex justify-center items-center">
         <label
           htmlFor="startDate"
-          className="mx-3 my-2 md:my-3 lg:my-3 xl:my-3"
+          className="mx-3 my-2 md:my-3 lg:my-3 xl:my-3 text-white"
         >
-          Start Date:
+          From Date:
         </label>
         <input
           type="date"
@@ -73,8 +80,8 @@ const Body = () => {
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
         />
-        <label htmlFor="endDate" className="mx-3 my-2 md:my-3 lg:my-3 xl:my-3">
-          End Date:
+        <label htmlFor="endDate" className="mx-3 my-2 md:my-3 lg:my-3 xl:my-3 text-white">
+          To Date:
         </label>
         <input
           type="date"
@@ -89,18 +96,18 @@ const Body = () => {
         >
           Submit
         </button>
+        
+        
       </div>
-      <div className=" md:mx-32 lg:mx-32 xl:mx-32 my-10">
+      <div className="md:mx-32 lg:mx-32 xl:mx-32 my-10">
         <div className=" flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between md:flex-wrap lg:flex-wrap xl:flex-wrap mb-4">
           {filteredMovie.length === 0 ? (
             <p>No movies found within the specified date range.</p>
           ) : (
             filteredMovie.map((movie) => {
               return (
-                <div
-                  className="w-full md:w-1/3 lg:w-1/3 xl:w-1/3"
-                >
-                  <MovieList movie={movie} key={movie.id}/>
+                <div className="w-full md:w-1/3 lg:w-1/3 xl:w-1/3">
+                  <MovieList movie={movie} key={movie.id} />
                 </div>
               );
             })
