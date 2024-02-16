@@ -9,7 +9,7 @@ const Modal = ({ showModalData, closeModal }) => {
   const embeddableUrl = `https://www.youtube.com/embed/${videoId}`;
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-gray-800 bg-opacity-50 z-50">
-      <div className="bg-white p-4 rounded-lg relative">
+      <div className="bg-white p-4 rounded-lg relative ">
         <button
           className="absolute top-2 right-2 text-gray-600"
           onClick={closeModal}
@@ -31,8 +31,8 @@ const Modal = ({ showModalData, closeModal }) => {
             </p>
             {regularUrl ? (
               <iframe
-                width="560"
-                height="315"
+                width="300"
+                height="215"
                 src={embeddableUrl}
                 title="YouTube video player"
                 frameBorder="0"
