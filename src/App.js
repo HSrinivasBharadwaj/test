@@ -3,6 +3,7 @@ import './App.css';
 import Body from './components/Body';
 import Header from './components/Header';
 import { Route,Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 
 
 
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Body />}/>
       </Routes>
-     
+     <Footer />
     </div>
   );
 }
