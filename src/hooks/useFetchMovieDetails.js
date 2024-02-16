@@ -2,7 +2,6 @@ import React,{ useState, useEffect } from 'react'
 import axios from 'axios'
 
 const useFetchMovieDetails = () => {
-    //1e6ca77da6mshb321643d0219222p188a42jsn8f72a85f52ac
     const [loading, setLoading] = useState(false);
     const [movieData, setMovieData] = useState([]);
     const [error, setError] = useState("");
