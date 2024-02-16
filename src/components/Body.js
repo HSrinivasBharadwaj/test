@@ -98,10 +98,9 @@ const Body = () => {
             filteredMovie.map((movie) => {
               return (
                 <div
-                  key={movie.id}
                   className="w-full md:w-1/3 lg:w-1/3 xl:w-1/3"
                 >
-                  <MovieList movie={movie} />
+                  <MovieList movie={movie} key={movie.id}/>
                 </div>
               );
             })
