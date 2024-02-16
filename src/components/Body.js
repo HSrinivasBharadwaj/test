@@ -6,6 +6,7 @@ const Body = () => {
   const [searchMovie, setSearchMovie] = useState("");
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [filteredMovieLength, setFilteredMovieLength] = useState(null);
   const [filteredMovie, setFilteredMovie] = useState([]);
   const { movieData, loading, error } = useFetchMovieDetails();
   const { movies } = movieData;
@@ -48,8 +49,9 @@ const Body = () => {
     });
 
     setFilteredMovie(filteredMovies);
+    let movieLengthList = filteredMovies.length;
+    setFilteredMovieLength(movieLengthList);
   };
-  
 
   return (
     <div className="bg-[#171941]">
@@ -80,7 +82,10 @@ const Body = () => {
           value={startDate}
           onChange={(e) => setStartDate(e.target.value)}
         />
-        <label htmlFor="endDate" className="mx-3 my-2 md:my-3 lg:my-3 xl:my-3 text-white">
+        <label
+          htmlFor="endDate"
+          className="mx-3 my-2 md:my-3 lg:my-3 xl:my-3 text-white"
+        >
           To Date:
         </label>
         <input
@@ -97,8 +102,14 @@ const Body = () => {
           Submit
         </button>
         
-        
       </div>
+      {filteredMovieLength && (
+          <p className="text-white text-center font-semibold">
+            {" "}
+            Total {filteredMovieLength} movies found within the specified date
+            range.
+          </p>
+        )}
       <div className="md:mx-32 lg:mx-32 xl:mx-32 my-10">
         <div className=" flex flex-col md:flex-row lg:flex-row xl:flex-row justify-between md:flex-wrap lg:flex-wrap xl:flex-wrap mb-4">
           {filteredMovie.length === 0 ? (
